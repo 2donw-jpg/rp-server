@@ -10,8 +10,8 @@ def profile(request):
     return render(request, 'pages/profile.html')
 
 
-def notifications(request):
-    return render(request, 'pages/notifications.html')
+def notification(request):
+    return render(request, 'pages/notification.html')
 
 def login(request):
     if request.method == 'POST':
