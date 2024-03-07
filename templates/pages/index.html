@@ -1,716 +1,812 @@
-{% extends 'layouts/base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<link rel="stylesheet" href="style.css">
 
-{% block breadcrumbs %}{% endblock breadcrumbs %}
+<!------------------LIght BOx for Gallery-------------->
+<link rel="stylesheet" href="lightbox.min.css">
+<script type="text/javascript" src="lightbox-plus-jquery.min.js"></script>
+<!------------------LIght BOx for Gallery-------------->
+<title>Application-1</title>
+</head>
+<body>
 
-{% block content %}
 
-  <!-- [ Main Content ] start -->
-  <div class="row">
+    <!-------------------------------NAvigation Starts------------------>
+
+    <nav class="navbar navbar-expand-md navbar-dark mb-4" style="background-color:#3097D1">
+        <a href="/home/" class="navbar-brand"><img src="img/brand-white.png" alt="logo" class="img-fluid" width="80px" height="100px"></a>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#responsive"><span class="navbar-toggler-icon"></span></button>
+
+
+        <div class="collapse navbar-collapse" id="responsive">
+            <ul class="navbar-nav mr-auto text-capitalize">
+                <li class="nav-item"><a href="/home/" class="nav-link active">home</a></li>
+                <li class="nav-item"><a href="home/profile/" class="nav-link">profile</a></li>
+                <li class="nav-item"><a href="#modalview" class="nav-link" data-toggle="modal">messages</a></li>
+                <li class="nav-item"><a href="home/notification/" class="nav-link">docs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link d-md-none">growl</a></li>
+                <li class="nav-item"><a href="#" class="nav-link d-md-none">logout</a></li>
+
+            </ul>
+
+            <form action="" class="form-inline ml-auto d-none d-md-block">
+                <input type="text" name="search" id="search" placeholder="Search" class="form-control form-control-sm">
+            </form>
+            <a href="home/notification/" class="text-decoration-none" style="color:#CBE4F2;font-size:22px;"><i class="far fa-bell ml-3 d-none d-md-block"></i></a> 
+            <img src="img/avatar-dhg.png" alt="" class="rounded-circle ml-3 d-none d-md-block" width="32px" height="32px">
+
+
+
+
+
+        </div>
+
+
+
+
+
+    </nav>
+
+    <!---------------------------------------------Ends navigation------------------------------>
+
+    <!---------------------------MOdal Section  satrts------------------->
+
+    <div class="modal fade" id="modalview">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <div class="modal-title h4">Messages</div>
+
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+
+                <div class="modal-body">
+
+
+                    <ul class="list-unstyled">
+
+
+                     <a href="#" class="text-decoration-none">
+                        <li class="media hover-media">
+                           
+                                <img src="img/avatar-dhg.png" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+
+                                <div class="media-body text-dark">
+                                        <h6 class="media-header">Jchob Thunder and <strong> 1 others</strong></h6>
+                                        <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+                                </div>
+
+                        </li>
+                    </a>
+                    <hr class="my-3">
+
+
+                    
+                    <a href="#" class="text-decoration-none">
+                            <li class="media hover-media">
+                               
+                                    <img src="img/avatar-fat.jpg" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
     
-    <!--[ daily sales section ] start-->
-    <div class="col-md-6 col-xl-4">
-      <div class="card daily-sales">
-        <div class="card-block">
-          <h6 class="mb-4">Daily Sales</h6>
-          <div class="row d-flex align-items-center">
-            <div class="col-9">
-              <h3 class="f-w-300 d-flex align-items-center m-b-0"><i
-                  class="feather icon-arrow-up text-c-green f-30 m-r-10"></i>$
-                249.95</h3>
-            </div>
+                                    <div class="media-body text-dark">
+                                            <h6 class="media-header">Mark Otto and <strong> 3 others</strong></h6>
+                                            <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    
+                                    </div>
+    
+                            </li>
+                        </a>
 
-            <div class="col-3 text-right">
-              <p class="m-b-0">67%</p>
-            </div>
-          </div>
-          <div class="progress m-t-30" style="height: 7px;">
-            <div class="progress-bar progress-c-theme" role="progressbar" style="width: 50%;"
-              aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--[ daily sales section ] end-->
-    <!--[ Monthly  sales section ] starts-->
-    <div class="col-md-6 col-xl-4">
-      <div class="card Monthly-sales">
-        <div class="card-block">
-          <h6 class="mb-4">Monthly Sales</h6>
-          <div class="row d-flex align-items-center">
-            <div class="col-9">
-              <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i
-                  class="feather icon-arrow-down text-c-red f-30 m-r-10"></i>$
-                2.942.32</h3>
-            </div>
-            <div class="col-3 text-right">
-              <p class="m-b-0">36%</p>
-            </div>
-          </div>
-          <div class="progress m-t-30" style="height: 7px;">
-            <div class="progress-bar progress-c-theme2" role="progressbar" style="width: 35%;"
-              aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--[ Monthly  sales section ] end-->
-    <!--[ year  sales section ] starts-->
-    <div class="col-md-12 col-xl-4">
-      <div class="card yearly-sales">
-        <div class="card-block">
-          <h6 class="mb-4">Yearly Sales</h6>
-          <div class="row d-flex align-items-center">
-            <div class="col-9">
-              <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i
-                  class="feather icon-arrow-up text-c-green f-30 m-r-10"></i>$
-                8.638.32</h3>
-            </div>
-            <div class="col-3 text-right">
-              <p class="m-b-0">80%</p>
-            </div>
-          </div>
-          <div class="progress m-t-30" style="height: 7px;">
-            <div class="progress-bar progress-c-theme" role="progressbar" style="width: 70%;"
-              aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--[ year  sales section ] end-->
-    <!--[ Recent Users ] start-->
-    <div class="col-xl-8 col-md-6">
-      <div class="card Recent-Users">
 
-        {% if products %}
+                        <hr class="my-3">
 
-          <div class="card-header">
-            <h5>Products</h5>
-          </div>
-          <div class="card-block px-0 py-3">
-            <div class="table-responsive">
-              <table class="table table-hover">
 
-                <tbody>
-                  {% for p in products %}
+                        <a href="#" class="text-decoration-none">
+                            <li class="media hover-media">
+                               
+                                    <img src="img/avatar-mdo.png" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+    
+                                    <div class="media-body text-dark">
+                                            <h6 class="media-header">Archer andu and <strong> 5 others</strong></h6>
+                                            <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    
+                                    </div>
+    
+                            </li>
+                        </a>
 
-                    <tr class="unread">
-                      <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/avatar-1.jpg' %}"
-                          alt="activity-user">
-                      </td>
-                      <td>
-                        <h6 class="mb-1">{{ p.name }}</h6>
-                        <p class="m-0">{{ p.info }}</p>
-                      </td>
-                      <td>
-                        <h6 class="text-muted">
-                          <i class="fa-solid fa-cart-shopping"></i>
-                          <i class="fas fa-tag text-c-green f-10 m-r-15"></i>
-                          ${{ p.price }}
-                        </h6>
-                      </td>
-                      <td>
-                        <a href="#" class="label theme-bg2 text-white f-12">View</a>
-                        <a href="#" class="label theme-bg text-white f-12">Delete</a>
-                      </td>
-                    </tr>
+                        <hr class="my-3">
 
-                  {% endfor %}
-                </tbody>
-                
-              </table>
-            </div>
-          </div>
 
-        {% else %}
+                        <a href="#" class="text-decoration-none">
+                                <li class="media hover-media">
+                                   
+                                        <img src="img/avatar-dhg.png" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
         
-          <div class="card-header">
-            <h5>Recent Users</h5>
-          </div>
-          <div class="card-block px-0 py-3">
-            <div class="table-responsive">
-              <table class="table table-hover">
-                <tbody>
-                  <tr class="unread">
-                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/avatar-1.jpg' %}"
-                        alt="activity-user">
-                    </td>
-                    <td>
-                      <h6 class="mb-1">Isabella Christensen</h6>
-                      <p class="m-0">Lorem Ipsum is simply…</p>
-                    </td>
-                    <td>
-                      <h6 class="text-muted"><i class="fas fa-circle text-c-green f-10 m-r-15"></i>11
-                        MAY 12:56</h6>
-                    </td>
-                    <td><a href="#!" class="label theme-bg2 text-white f-12">Reject</a><a href="#!"
-                        class="label theme-bg text-white f-12">Approve</a>
-                    </td>
-                  </tr>
-                  <tr class="unread">
-                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/avatar-2.jpg' %}"
-                        alt="activity-user">
-                    </td>
-                    <td>
-                      <h6 class="mb-1">Mathilde Andersen</h6>
-                      <p class="m-0">Lorem Ipsum is simply text of…</p>
-                    </td>
-                    <td>
-                      <h6 class="text-muted"><i class="fas fa-circle text-c-red f-10 m-r-15"></i>11 MAY
-                        10:35</h6>
-                    </td>
-                    <td><a href="#!" class="label theme-bg2 text-white f-12">Reject</a><a href="#!"
-                        class="label theme-bg text-white f-12">Approve</a>
-                    </td>
-                  </tr>
-                  <tr class="unread">
-                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/avatar-3.jpg' %}"
-                        alt="activity-user">
-                    </td>
-                    <td>
-                      <h6 class="mb-1">Karla Sorensen</h6>
-                      <p class="m-0">Lorem Ipsum is simply…</p>
-                    </td>
-                    <td>
-                      <h6 class="text-muted"><i class="fas fa-circle text-c-green f-10 m-r-15"></i>9 MAY
-                        17:38</h6>
-                    </td>
-                    <td><a href="#!" class="label theme-bg2 text-white f-12">Reject</a><a href="#!"
-                        class="label theme-bg text-white f-12">Approve</a>
-                    </td>
-                  </tr>
-                  <tr class="unread">
-                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/avatar-1.jpg' %}"
-                        alt="activity-user">
-                    </td>
-                    <td>
-                      <h6 class="mb-1">Ida Jorgensen</h6>
-                      <p class="m-0">Lorem Ipsum is simply text of…</p>
-                    </td>
-                    <td>
-                      <h6 class="text-muted f-w-300"><i class="fas fa-circle text-c-red f-10 m-r-15"></i>19
-                        MAY
-                        12:56</h6>
-                    </td>
-                    <td><a href="#!" class="label theme-bg2 text-white f-12">Reject</a><a href="#!"
-                        class="label theme-bg text-white f-12">Approve</a>
-                    </td>
-                  </tr>
-                  <tr class="unread">
-                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/avatar-2.jpg' %}"
-                        alt="activity-user">
-                    </td>
-                    <td>
-                      <h6 class="mb-1">Albert Andersen</h6>
-                      <p class="m-0">Lorem Ipsum is simply dummy…</p>
-                    </td>
-                    <td>
-                      <h6 class="text-muted"><i class="fas fa-circle text-c-green f-10 m-r-15"></i>21
-                        July 12:56</h6>
-                    </td>
-                    <td><a href="#!" class="label theme-bg2 text-white f-12">Reject</a><a href="#!"
-                        class="label theme-bg text-white f-12">Approve</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                                        <div class="media-body text-dark">
+                                                <h6 class="media-header">Jchob Thunder and <strong> 1 others</strong></h6>
+                                                <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        
+                                        </div>
+        
+                                </li>
+                            </a>
+                            <hr class="my-3">
+        
+        
+                            
+                            <a href="#" class="text-decoration-none">
+                                    <li class="media hover-media">
+                                       
+                                            <img src="img/avatar-fat.jpg" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+            
+                                            <div class="media-body text-dark">
+                                                    <h6 class="media-header">Mark Otto and <strong> 3 others</strong></h6>
+                                                    <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            
+                                            </div>
+            
+                                    </li>
+                                </a>
+        
+        
+                                <hr class="my-3">
+        
+        
+                                <a href="#" class="text-decoration-none">
+                                    <li class="media hover-media">
+                                       
+                                            <img src="img/avatar-mdo.png" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+            
+                                            <div class="media-body text-dark">
+                                                    <h6 class="media-header">Archer andu and <strong> 5 others</strong></h6>
+                                                    <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            
+                                            </div>
+            
+                                    </li>
+                                </a>
+
+                        
+                                <hr class="my-3">
+                                <a href="#" class="text-decoration-none">
+                                        <li class="media hover-media">
+                                           
+                                                <img src="img/avatar-dhg.png" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+                
+                                                <div class="media-body text-dark">
+                                                        <h6 class="media-header">Jchob Thunder and <strong> 1 others</strong></h6>
+                                                        <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                
+                                                </div>
+                
+                                        </li>
+                                    </a>
+                                    <hr class="my-3">
+                
+                
+                                    
+                                    <a href="#" class="text-decoration-none">
+                                            <li class="media hover-media">
+                                               
+                                                    <img src="img/avatar-fat.jpg" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+                    
+                                                    <div class="media-body text-dark">
+                                                            <h6 class="media-header">Mark Otto and <strong> 3 others</strong></h6>
+                                                            <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    
+                                                    </div>
+                    
+                                            </li>
+                                        </a>
+                
+                
+                                        <hr class="my-3">
+                
+                
+                                        <a href="#" class="text-decoration-none">
+                                            <li class="media hover-media">
+                                               
+                                                    <img src="img/avatar-mdo.png" alt="img" width="60px" height="60px" class="rounded-circle mr-3">
+                    
+                                                    <div class="media-body text-dark">
+                                                            <h6 class="media-header">Archer andu and <strong> 5 others</strong></h6>
+                                                            <p class="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    
+                                                    </div>
+                    
+                                            </li>
+                                        </a>
+    
+    
+
+
+                    </ul>
+
+
+
+                    
+
+                </div>
             </div>
-          </div>
-
-        {% endif %}
 
 
-      </div>
+        </div>
+
+
     </div>
-    <!--[ Recent Users ] end-->
 
-    <!-- [ statistics year chart ] start -->
-    <div class="col-xl-4 col-md-6">
-      <div class="card card-event">
-        <div class="card-block">
-          <div class="row align-items-center justify-content-center">
-            <div class="col">
-              <h5 class="m-0">Upcoming Event</h5>
-            </div>
-            <div class="col-auto">
-              <label class="label theme-bg2 text-white f-14 f-w-400 float-right">34%</label>
-            </div>
-          </div>
-          <h2 class="mt-3 f-w-300">45<sub class="text-muted f-14">Competitors</sub></h2>
-          <h6 class="text-muted mt-4 mb-0">You can participate in event </h6>
-          <i class="fab fa-angellist text-c-purple f-50"></i>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-block border-bottom">
-          <div class="row d-flex align-items-center">
-            <div class="col-auto">
-              <i class="feather icon-zap f-30 text-c-green"></i>
-            </div>
-            <div class="col">
-              <h3 class="f-w-300">235</h3>
-              <span class="d-block text-uppercase">TOTAL IDEAS</span>
-            </div>
-          </div>
-        </div>
-        <div class="card-block">
-          <div class="row d-flex align-items-center">
-            <div class="col-auto">
-              <i class="feather icon-map-pin f-30 text-c-blue"></i>
-            </div>
-            <div class="col">
-              <h3 class="f-w-300">26</h3>
-              <span class="d-block text-uppercase">TOTAL LOCATIONS</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- [ statistics year chart ] end -->
-    <!--[social-media section] start-->
-    <div class="col-md-12 col-xl-4">
-      <div class="card card-social">
-        <div class="card-block border-bottom">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-auto">
-              <i class="fab fa-facebook-f text-primary f-36"></i>
-            </div>
-            <div class="col text-right">
-              <h3>12,281</h3>
-              <h5 class="text-c-green mb-0">+7.2% <span class="text-muted">Total Likes</span></h5>
-            </div>
-          </div>
-        </div>
-        <div class="card-block">
-          <div class="row align-items-center justify-content-center card-active">
-            <div class="col-6">
-              <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Target:</span>35,098</h6>
-              <div class="progress">
-                <div class="progress-bar progress-c-theme" role="progressbar" style="width:60%;height:6px;"
-                  aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-6">
-              <h6 class="text-center  m-b-10"><span class="text-muted m-r-5">Duration:</span>3,539</h6>
-              <div class="progress">
-                <div class="progress-bar progress-c-theme2" role="progressbar" style="width:45%;height:6px;"
-                  aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-xl-4">
-      <div class="card card-social">
-        <div class="card-block border-bottom">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-auto">
-              <i class="fab fa-twitter text-c-blue f-36"></i>
-            </div>
-            <div class="col text-right">
-              <h3>11,200</h3>
-              <h5 class="text-c-purple mb-0">+6.2% <span class="text-muted">Total Likes</span>
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div class="card-block">
-          <div class="row align-items-center justify-content-center card-active">
-            <div class="col-6">
-              <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Target:</span>34,185</h6>
-              <div class="progress">
-                <div class="progress-bar progress-c-green" role="progressbar" style="width:40%;height:6px;"
-                  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-6">
-              <h6 class="text-center  m-b-10"><span class="text-muted m-r-5">Duration:</span>4,567</h6>
-              <div class="progress">
-                <div class="progress-bar progress-c-blue" role="progressbar" style="width:70%;height:6px;"
-                  aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-xl-4">
-      <div class="card card-social">
-        <div class="card-block border-bottom">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-auto">
-              <i class="fab fa-google-plus-g text-c-red f-36"></i>
-            </div>
-            <div class="col text-right">
-              <h3>10,500</h3>
-              <h5 class="text-c-blue mb-0">+5.9% <span class="text-muted">Total Likes</span></h5>
-            </div>
-          </div>
-        </div>
-        <div class="card-block">
-          <div class="row align-items-center justify-content-center card-active">
-            <div class="col-6">
-              <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Target:</span>25,998</h6>
-              <div class="progress">
-                <div class="progress-bar progress-c-theme" role="progressbar" style="width:80%;height:6px;"
-                  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-6">
-              <h6 class="text-center  m-b-10"><span class="text-muted m-r-5">Duration:</span>7,753</h6>
-              <div class="progress">
-                <div class="progress-bar progress-c-theme2" role="progressbar" style="width:50%;height:6px;"
-                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--[social-media section] end-->
-    <!-- [ rating list ] starts-->
-    <div class="col-xl-4 col-md-6">
-      <div class="card user-list">
-        <div class="card-header">
-          <h5>Rating</h5>
-        </div>
-        <div class="card-block">
-          <div class="row align-items-center justify-content-center m-b-20">
-            <div class="col-6">
-              <h2 class="f-w-300 d-flex align-items-center float-left m-0">4.7 <i
-                  class="fas fa-star f-10 m-l-10 text-c-yellow"></i></h2>
-            </div>
-            <div class="col-6">
-              <h6 class="d-flex  align-items-center float-right m-0">0.4 <i
-                  class="fas fa-caret-up text-c-green f-22 m-l-10"></i></h6>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-12">
-              <h6 class="align-items-center float-left"><i
-                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>5</h6>
-              <h6 class="align-items-center float-right">384</h6>
-              <div class="progress m-t-30 m-b-20" style="height: 6px;">
-                <div class="progress-bar progress-c-theme" role="progressbar" style="width: 70%;"
-                  aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-xl-12">
-              <h6 class="align-items-center float-left"><i
-                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>4</h6>
-              <h6 class="align-items-center float-right">145</h6>
-              <div class="progress m-t-30  m-b-20" style="height: 6px;">
-                <div class="progress-bar progress-c-theme" role="progressbar" style="width: 35%;"
-                  aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-xl-12">
-              <h6 class="align-items-center float-left"><i
-                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>3</h6>
-              <h6 class="align-items-center float-right">24</h6>
-              <div class="progress m-t-30  m-b-20" style="height: 6px;">
-                <div class="progress-bar progress-c-theme" role="progressbar" style="width: 25%;"
-                  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-xl-12">
-              <h6 class="align-items-center float-left"><i
-                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>2</h6>
-              <h6 class="align-items-center float-right">1</h6>
-              <div class="progress m-t-30  m-b-20" style="height: 6px;">
-                <div class="progress-bar progress-c-theme" role="progressbar" style="width: 10%;"
-                  aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-xl-12">
-              <h6 class="align-items-center float-left"><i
-                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>1</h6>
-              <h6 class="align-items-center float-right">0</h6>
-              <div class="progress m-t-30  m-b-20" style="height: 6px;">
-                <div class="progress-bar" role="progressbar" style="width:0;" aria-valuenow="0"
-                  aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- [ rating list ] end-->
-    <div class="col-xl-8 col-md-12 m-b-30">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-            aria-selected="false">Today</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active show" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-            aria-controls="profile" aria-selected="true">This
-            Week</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-            aria-controls="contact" aria-selected="false">All</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Activity</th>
-                <th>Time</th>
-                <th>Status</th>
-                <th class="text-right"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">Ida Jorgensen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">The quick brown fox</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">3:28 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-green">Done</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-green f-10"></i>
-                </td>
-              </tr>
+    <!-------------------------------MOdal Ends---------------------------->
 
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-2.jpg' %}" alt="activity-user">Albert Andersen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">Jumps over the lazy</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">2:37 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-red">Missed</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-red f-10"></i>
-                </td>
-              </tr>
 
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-3.jpg' %}" alt="activity-user">Silje Larsen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">Dog the quick brown</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">10:23 AM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-purple">Delayed</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-purple f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">Ida Jorgensen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">The quick brown fox</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">4:28 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-green">Done</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-green f-10"></i>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+
+    <!-------------------------------------------Start Grids layout for lg-xl-3 columns and (xs-lg 1 columns)--------------------------------->
+
+
+    <div class="container">
+        <div class="row">
+
+
+            <!--------------------------left columns  start-->
+
+            <div class="col-12 col-lg-3">
+
+                <div class="left-column">
+
+
+                    <div class="card card-left1 mb-4" >
+                        <img src="img/photo-1455448972184-de647495d428.jpg" alt="" class="card-img-top img-fluid">
+                        <div class="card-body text-center ">
+                            <img src="img/avatar-dhg.png" alt="img" width="120px" height="120px" class="rounded-circle mt-n5">
+                            <h5 class="card-title">Dave Gamache</h5>
+                            <p class="card-text text-justify mb-2">I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.</p>
+                            <ul class="list-unstyled nav justify-content-center">
+                               <a href="#" class="text-dark text-decoration-none"> <li class="nav-item">Friends <br> <strong>12M</strong></li></a>
+                              <a href="#" class="text-dark text-decoration-none"> <li class="nav-item">Enimes <br> <strong>1</strong></li></a> 
+                            </ul>
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+                    <div class="card shadow-sm card-left2 mb-4">
+
+                        <div class="card-body">
+
+                                <h5 class="mb-3 card-title">About <small><a href="#" class="ml-1">Edit</a></small></h5>
+
+                                <p class="card-text"> <i class="fas fa-calendar-week mr-2"></i> Went to <a href="#" class="text-decoration-none">oh canada</a></p>
+
+                                <p class="card-text"> <i class="fas fa-user-friends mr-2"></i> Become a friend with <a href="#" class="text-decoration-none">obama</a></p>
+                                <p class="card-text"> <i class="far fa-building mr-2"></i> Work at <a href="#" class="text-decoration-none">Github</a></p>
+                                <p class="card-text"> <i class="fas fa-home mr-2"></i> Live in <a href="#" class="text-decoration-none">San francisco</a></p>
+                                <p class="card-text"> <i class="fas fa-map-marker mr-2"></i> From <a href="#" class="text-decoration-none">Seattle, WA</a></p>
+
+
+
+
+                        </div>
+                     
+
+
+
+
+                    </div>
+
+
+
+
+                    <div class="card shadow-sm card-left3 mb-4">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Photos<small class="ml-2"><a href="#">.Edit </a></small></h5>
+
+                            <div class="row">
+                                <div class="col-6 p-1">
+                                    <a href="img/left1.jpg" data-lightbox="id" ><img src="img/left1.jpg" alt="img" class="img-fluid my-2"></a>  
+                                    <a href="img/left2.jpg"data-lightbox="id"><img src="img/left2.jpg" alt="img" class="img-fluid my-2"></a>
+                                    <a href="img/left3.jpg"data-lightbox="id"><img src="img/left3.jpg" alt="img" class="img-fluid my-2"></a>
+
+                                </div>
+
+
+                                <div class="col-6 p-1">
+                                        <a href="img/left4.jpg"data-lightbox="id"><img src="img/left4.jpg" alt="img" class="img-fluid my-2"></a>
+                                        <a href="img/left5.jpg"data-lightbox="id"><img src="img/left5.jpg" alt="img" class="img-fluid my-2"></a>
+                                        <a href="img/left6.jpg"data-lightbox="id"><img src="img/left6.jpg" alt="img" class="img-fluid my-2"></a>
+    
+                                    </div>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+                        </div>
+
+
+
+
+                   
+
+                    
+
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+ <!--------------------------Ends Left columns-->
+
+
+
+
+
+ <!---------------------------------------Middle columns  start---------------->
+
+
+
+            
+            <div class="col-12 col-lg-6" >
+
+
+                <div class="middle-column">
+
+
+                    <div class="card" >
+
+
+                        <div class="card-header bg-transparent">
+                            <form class="form-inline">
+
+
+                                <div class="input-group w-100">
+                                 <input type="text" name="message" id="message" placeholder="Message" class="form-control form-control-md">
+
+                                 <div class="input-group-append">
+                                        <div class="input-group-text">
+                                                <i class="fas fa-camera"></i>
+                                            </div>
+
+
+                                 </div>
+
+                                </div>
+
+
+
+                        
+                                
+                               
+                            </form>
+
+                        </div>
+
+
+
+
+
+
+                           
+   <div class="card-body">
+
+    <div class="media">
+        <img src="img/avatar-dhg.png" alt="img" width="55px" height="55px" class="rounded-circle mr-3">
+
+        <div class="media-body">
+            <h5>Dave Gamache</h5>
+            <p class="card-text text-justify">Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+           
+
+            <div class="row no-gutters mb-3">
+                <div class="col-6 p-1 text-center">
+
+                        <img src="img/adventure-alps-clouds-2259810.jpg" alt="" class="img-fluid mb-2">
+                        <img src="img/aerial-view-architectural-design-buildings-2228123.jpg" alt="" class="img-fluid">
+            
+
+                </div>
+
+                <div class="col-6 p-1 text-center">
+
+                        <img src="img/celebration-colored-smoke-dark-2297472.jpg" alt="" class="img-fluid mb-2">
+                        <img src="img/bodybuilding-exercise-fitness-2294361.jpg" alt=""class="img-fluid">
+            
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+        
+            <div class="media mb-3">
+                    <img src="img/avatar-dhg.png" alt="img" width="45px" height="45px" class="rounded-circle mr-2">
+                    <div class="media-body">
+                            <p class="card-text text-justify">Jacon Thornton: Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.</p>
+
+                    </div>
+
+
+            </div>
+
+            
+            <div class="media">
+                    <img src="img/avatar-mdo.png" alt="img" width="45px" height="45px" class="rounded-circle mr-2">
+                    <div class="media-body">
+                            <p class="card-text text-justify">Mark Otto: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+
+                    </div>
+
+
+            </div>
+
+            
+            
+
+
 
         </div>
-        <div class="tab-pane fade active show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Activity</th>
-                <th>Time</th>
-                <th>Status</th>
-                <th class="text-right"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-2.jpg' %}" alt="activity-user">Albert Andersen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">Jumps over the lazy</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">2:37 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-red">Missed</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-red f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">Ida Jorgensen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">The quick brown fox</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">3:28 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-green">Done</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-green f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">Ida Jorgensen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">The quick brown fox</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">4:28 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-green">Done</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-green f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-3.jpg' %}" alt="activity-user">Silje Larsen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">Dog the quick brown</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">10:23 AM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-purple">Delayed</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-purple f-10"></i>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <small>5min</small>
+        
+
+
+    </div>
+
+
+    
+
+
+
+   </div>
+
+                            
+                             
+ <hr>
+
+<div class="card-body">
+
+    <div class="media">
+            <img src="img/avatar-fat.jpg" alt="img" width="55px" height="55px" class="rounded-circle mr-3">
+
+        <div class="media-body">
+                <h5>Jacob Thornton</h5>
+                <p class="text-justify">Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                    Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+
 
         </div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Activity</th>
-                <th>Time</th>
-                <th>Status</th>
-                <th class="text-right"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-3.jpg' %}" alt="activity-user">Silje Larsen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">Dog the quick brown</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">10:23 AM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-purple">Delayed</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-purple f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">Ida Jorgensen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">The quick brown fox</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">3:28 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-green">Done</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-green f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-2.jpg' %}" alt="activity-user">Albert Andersen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">Jumps over the lazy</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">2:37 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-red">Missed</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-red f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">Ida Jorgensen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">The quick brown fox</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">4:28 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-green">Done</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-green f-10"></i>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+
+        <small>14 min</small>
+
     </div>
+
+
+
+
+
+</div>
+<hr>
+
+<div class="card-body">
+
+    <div class="media">
+
+            <img src="img/avatar-mdo.png" alt="img" width="55px" height="55px" class="rounded-circle mr-3">
+            <div class="media-body">
+                <h5>Mark Otto</h5>
+                <p class="text-justify">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+             <a href="img/mid5.jpg" data-lightbox="id"><img src="img/mid5.jpg" alt="" class="img-fluid shadow-sm img-thumbnail">   </a>   
+
+            </div>
+
+
+            <small class="text-muted">10 min</small>
+
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+                     
+                           
+
+ </div>
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
 
   </div>
-  <!-- [ Main Content ] end -->
 
-{% endblock content %}
+
+
+
+
+
+  
+
+
+
+
+
+
+  <br> <br> <br><br> <br> <br>
+
+<!------------------------Middle column Ends---------------->
+
+
+
+
+
+
+
+
+<!---------------------------Statrs Right Columns----------------->
+
+
+                
+<div class="col-12 col-lg-3">
+
+
+    <div class="right-column">
+
+        <div class="card shadow-sm mb-4" >
+            <div class="card-body">
+                <h6 class="card-title">Sponsored</h6>
+                <img src="img/right1.jpg" alt="card-img" class="card-img mb-3">
+                <p class="card-text text-justify"> <span class="h6">It might be time to visit Iceland.</span> Iceland is so chill, and everything looks cool here. Also, we heard the people are pretty nice.  What are you waiting for?</p>
+                <a href="#" class="btn btn-outline-info card-link btn-sm">Buy a ticket</a>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="card shadow-sm mb-4">
+
+            <div class="card-body">
+
+                    <h6 class="card-title ">Likes <a href="#" class="ml-1"><small>.View All</small> </a> </h6>
+                    <div class="row no-gutters d-none d-lg-flex">
+                        <div class="col-6 p-1">
+                                <img src="img/avatar-dhg.png" alt="img" width="80px" height="80px" class="rounded-circle mb-4">
+                                <img src="img/avatar-fat.jpg" alt="img" width="80px" height="80px" class="rounded-circle">
+
+
+
+                        </div>
+                        <div class="col-6 p-1 text-left">
+                            <h6>Jacob Thornton @fat</h6>
+                            <a href="#" class="btn btn-outline-info btn-sm mb-3"><i class="fas fa-user-friends"></i>Follow </a>
+
+                            <h6>Mark otto</h6>
+                            <a href="#" class="btn btn-outline-info  btn-sm"><i class="fas fa-user-friends"></i>Follow </a>
+
+                        </div>
+
+                    </div>
+
+            </div>
+
+            <div class="card-footer">
+
+                <p class="lead" style="font-size:18px;">Dave really likes these nerds, no one knows why though.</p>
+            </div>
+            
+
+
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <p>&copy; 2018 Bootstrap
+
+
+
+                        <a href="#">About</a>
+                        <a href="#">Help</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">Ads </a>
+                        <a href="#">Info</a>
+                        <a href="#">Brand</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Status</a>
+                        <a href="#">Apps</a>
+                        <a href="#">Jobs</a>
+                        <a href="#">Advertise</a>
+                    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                </p>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+</div>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!------------------------Light BOx OPtions------------->
+<script>
+        lightbox.option({
+          
+        })
+    </script>
+
+
+
+<!------------------------Light BOx OPtions------------->
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,3 +1,6 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en"><head>
   
@@ -7,25 +10,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 
 <!-- Favicon icon -->
-<link rel="icon" href="../static/assets/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../static/assets/images/favicon.ico" type="image/x-icon">
 <!-- fontawesome icon -->
-<link rel="stylesheet" href="../static/assets/fonts/fontawesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="../../static/assets/fonts/fontawesome/css/fontawesome-all.min.css">
 <!-- animation css -->
-<link rel="stylesheet" href="../static/assets/plugins/animation/css/animate.min.css">
+<link rel="stylesheet" href="../../static/assets/plugins/animation/css/animate.min.css">
 <!-- vendor css -->
-<link rel="stylesheet" href="../static/assets/css/style.css">
+<link rel="stylesheet" href="../../static/assets/css/style.css">
 <!-- dark mode css -->
-<link rel="stylesheet" href="../static/assets/css/dark.css">
+<link rel="stylesheet" href="../../static/assets/css/dark.css">
   
 </head>
 <body class="dark">
-
-  
-
     <div class="auth-wrapper">
         <div class="auth-content">
             <div class="auth-bg">
-
             </div>
             <div class="card">
                 <form method="post" class="card-body text-center">
@@ -43,12 +42,6 @@
                         <input type="password" name="password" class="form-control" placeholder="Password" required="" id="id_password">
                     </div>
                     
-                    <div class="form-group text-left mt-4">
-                        <div class="checkbox checkbox-fill d-inline">
-                            <input type="checkbox" name="checkbox-fill-1" id="checkbox-fill-a1" checked="">
-                            <label for="checkbox-fill-a1" class="cr"> Save Details</label>
-                        </div>
-                    </div>
                     <button class="btn btn-primary shadow-2 mb-4">Login</button>
                     <p class="mb-2 text-muted">Forgot password? <a href="/accounts/password-reset/">Reset</a></p>
                     <p class="mb-0 text-muted">Don’t have an account? <a href="/accounts/register/">Signup</a></p>

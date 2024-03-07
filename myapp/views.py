@@ -4,11 +4,32 @@ from django.contrib.auth import login, logout
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse("Welcome to zybal!")
+    return render(request, 'pages/index.html')
+
+def profile(request):
+    return render(request, 'pages/profile.html')
 
 
+def notifications(request):
+    return render(request, 'pages/notifications.html')
 
-def login_view(request):
+def login(request):
+    if request.method == 'POST':
+        
+        
+        #form = AuthenticationForm(request, data=request.POST)
+        #if form.is_valid():
+        #    user = form.get_user()
+        #    login(request, user)
+            return redirect('home/')  
+    else:
+        form = AuthenticationForm()
+
+    return render(request, 'accounts/auth-signin.html', {'form': form})
+
+
+def register(request):
+
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -18,4 +39,18 @@ def login_view(request):
     else:
         form = AuthenticationForm()
 
-    return render(request, 'accounts/auth-signin.html', {'form': form})
+    return render(request, 'accounts/auth-signup.html', {'form': form})
+
+
+def password_reset(request):
+
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('home')  
+    else:
+        form = AuthenticationForm()
+
+    return render(request, 'accounts/auth-reset.html', {'form': form})
